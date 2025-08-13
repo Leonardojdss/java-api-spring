@@ -2,16 +2,11 @@ package br.com.streaming.systemofstreaming.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true) //ignorar propriedades desconhecidas
-public record DataSerie(
+public record DataEpisodes(
     @JsonAlias("Title") String title,
-    @JsonAlias("totalSeasons") Integer totalSeasons,
-    @JsonAlias("imdbRating") String ratingIMDB
-    // @JsonProperty("imdbVotes") String votesIMDB
-) {
-
-
-
-}
+    @JsonAlias("Episode") Integer number,
+    @JsonAlias("imdbRating") String rating,
+    @JsonAlias("Released") String publishDate
+) {}
